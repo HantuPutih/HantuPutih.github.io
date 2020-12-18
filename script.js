@@ -2,9 +2,11 @@ const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('wrapper');
 const submitButton = document.getElementById('submit');
 
+
 (function(){
 function buildQuiz(){
     const output = [];
+
     myQuestions.forEach(
     (currentQuestion, questionNumber) => {
         const answers = [];
@@ -29,7 +31,8 @@ function buildQuiz(){
 function showResults(){
     const answerContainers = quizContainer.querySelectorAll('.answers');
     let numCorrect = 0;
-    let rank = "noob"
+    let rank = "Noob"
+
     myQuestions.forEach( (currentQuestion, questionNumber) => {
 
     const answerContainer = answerContainers[questionNumber];
@@ -40,22 +43,23 @@ function showResults(){
         numCorrect++;
     }
     
-    if  (numCorrect >= 3 && numCorrect <= 5 ){
-        rank = "plebian"
-    } else if (numCorrect === 6 || numCorrect === 7) {
-        rank = "web researcher"
+    if  (numCorrect === 2 ){
+        rank = "Plebian"
+    } else if (numCorrect === 3) {
+        rank = "Web Researcher"
     }
-    else if (numCorrect === 8 || numCorrect === 9) {
-        rank = "Tanks fan"
+    else if (numCorrect === 4) {
+        rank = "Tanks Fan"
     }
-    else if (numCorrect === 10) {
-        rank = "History Master!"
+    else if (numCorrect === 5) {
+        rank = "History Master"
     }
     });
-    resultsContainer.innerHTML = `Your score is ${numCorrect * 10}! Rank: ${rank}`;
+    resultsContainer.innerHTML = `Your score is ${numCorrect * 20}! Rank: ${rank}!`;
 }
 
-const myQuestions = [
+
+const Question1 = [
     {
         question: "What Tank is shown above?",
         answers: {
@@ -66,31 +70,31 @@ const myQuestions = [
         correctAnswer: "A"
     },
     {
-    question: "When was tank first appeared?",
-    answers: {
-        A: "World War I",
-        B: "world War II",
-        C: "Idk, when war happened... I guess?"
-    },
-    correctAnswer: "A"
-    },
-    {
-    question: "Which country invented the tank?",
-    answers: {
-        A: "Some wack country",
-        B: "Germany",
-        C: "British"
-    },
-    correctAnswer: "C"
+        question: "When was tank first appeared?",
+        answers: {
+            A: "World War I",
+            B: "world War II",
+            C: "Idk, when war happened... I guess?"
+        },
+        correctAnswer: "A"
     },
     {
-    question: "Which tank is named after a general?",
-    answers: {
-        A: "Abrams",
-        B: "Patton",
-        C: "Panzerkampfwagen",
+        question: "Which country invented the tank?",
+        answers: {
+            A: "Some wack country",
+            B: "Germany",
+            C: "British"
+        },
+        correctAnswer: "C"
     },
-    correctAnswer: "B"
+    {
+        question: "Which tank is named after a general?",
+        answers: {
+            A: "Abrams",
+            B: "Patton",
+            C: "Panzerkampfwagen",
+        },
+        correctAnswer: "B"
     },
     {
         question: "In WW2, which tank was used in Indonesia by the allies?",
@@ -99,10 +103,22 @@ const myQuestions = [
             B: "Sturmgeschütz",
             C: "M1 Abrams",
         },
-        correctAnswer: "a"
+        correctAnswer: "A"
+    },
+];
+
+const Question2 = [
+    {
+        question: "What Tank is shown above?",
+        answers: {
+            A: "AMX-13",
+            B: "M1 Abrams",
+            C: "T-90",
+        },
+        correctAnswer: "A"
     },
     {
-        question: "The Tiger tank is from....?",
+        question: "From which country is the Tiger tank?",
         answers: {
             A: "Germany",
             B: "USA",
@@ -110,7 +126,6 @@ const myQuestions = [
         },
         correctAnswer: "A"
     },
-    
     {
         question: "Why are the allies scared of the Soviet tanks?",
         answers: {
@@ -120,7 +135,6 @@ const myQuestions = [
         },
         correctAnswer: "B"
     },
-    
     {
         question: "Which statement is true?",
         answers: {
@@ -135,21 +149,71 @@ const myQuestions = [
         question: "T-34 is...",
         answers: {
             A: "a failed tank example",
-            B: "can destroy german tank easily",
+            B: "powerful enough to destroy german tank easily",
             C: "cheap and easy to produce/maintain",
         },
         correctAnswer: "C"
     },
+
+];
+
+const Question3 = [
     {
-        question: "The M4 Sherman use the.... suspension system",
+        question: "What Tank is shown above?",
         answers: {
-            A: "leaf",
-            B: "spring",
-            C: "The Vertical Volute Spring",
+            A: "AMX-13",
+            B: "M1 Abrams",
+            C: "T-90",
+        },
+        correctAnswer: "A"
+    },
+    {
+        question: "What caliber did the Tiger I had?",
+        answers: {
+            A: "105 MM cannon",
+            B: "128 MM cannon",
+            C: "88 MM cannon",
         },
         correctAnswer: "C"
     },
+    {
+        question: "By definition a tank is?",
+        answers: {
+            A: "armored fighting vehicle",
+            B: "pew pew machine",
+            C: "troops carrier"
+        },
+        correctAnswer: "A"
+    },
+    {
+        question: "which tank is the Russian MBT today?",
+        answers: {
+            A: "M1A2 Abrams",
+            B: "T-90",
+            C: "Leopard",
+        },
+        correctAnswer: "B"
+    },
+    {
+        question: "sloping the tank armor is more effective because?",
+        answers: {
+            A: "it increases the tank armor effectiveness",
+            B: "the bullet can go bbrrr",
+            C: "it's a slippery slope",
+        },
+        correctAnswer: "A"
+    },
 ];
+
+    let myQuestions = ''
+    let random = Math.ceil(Math.random()*3)
+    if (random === 1) {
+        myQuestions = Question1
+    } else if (random === 2) {
+        myQuestions = Question2
+    } else if (random === 3) {
+        myQuestions = Question3
+    }
 
 buildQuiz();
 
