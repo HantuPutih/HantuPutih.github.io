@@ -11,6 +11,11 @@ body{
     color: #333;
     text-align: center;
 }
+
+.bodyHtml {
+    background-color: rgb(49, 49, 49);
+    z-index: -1;
+}
 .bg-img {
     margin-top: 5.5%;
     width: 100%;
@@ -98,13 +103,14 @@ footer {
 
 /* div gallery */
 div.gallery {
-    margin: 5px;
     border: 1px solid #ccc;
-    float: left;
     width: 800px;
     clear: both;
-    margin-left: 25%;
     display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 
 }
 
@@ -129,9 +135,9 @@ text-align: center;
     border-radius: 2px;
     background-color:rgb(51, 75, 32);
     color: white;
-    margin-bottom: 20%;
     font-size: medium;
     position: fixed;
+    right: 8%;
 }
 
 .button-home:hover {

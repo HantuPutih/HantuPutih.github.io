@@ -42,7 +42,8 @@ function showResults(){
     if(userAnswer === currentQuestion.correctAnswer){
         numCorrect++;
     }
-    
+    });
+
     if  (numCorrect === 2 ){
         rank = "Plebian"
     } else if (numCorrect === 3) {
@@ -54,7 +55,6 @@ function showResults(){
     else if (numCorrect === 5) {
         rank = "History Master"
     }
-    });
     resultsContainer.innerHTML = `Your score is ${numCorrect * 20}! Rank: ${rank}!`;
 }
 
@@ -74,14 +74,14 @@ const Question1 = [
         answers: {
             A: "World War I",
             B: "world War II",
-            C: "Idk, when war happened... I guess?"
+            C: "idk, when war happened... I guess?"
         },
         correctAnswer: "A"
     },
     {
         question: "Which country invented the tank?",
         answers: {
-            A: "Some wack country",
+            A: "some wack country",
             B: "Germany",
             C: "British"
         },
@@ -130,17 +130,17 @@ const Question2 = [
         question: "Why are the allies scared of the Soviet tanks?",
         answers: {
             A: "stalin is on their side",
-            B: "It has sloped and thick armor and powerful gun",
-            C: "It has ICBM mounted on their turrets",
+            B: "it has sloped and thick armor and powerful gun",
+            C: "it has ICBM mounted on their turrets",
         },
         correctAnswer: "B"
     },
     {
         question: "Which statement is true?",
         answers: {
-            A: "Smooth bore barrel offers more accuracy",
-            B: "Rifled barrel offers more accuracy",
-            C: "None of the above",
+            A: "smooth bore barrel offers more accuracy",
+            B: "rifled barrel offers more accuracy",
+            C: "none of the above",
         },
         correctAnswer: "B"
     },
@@ -186,7 +186,7 @@ const Question3 = [
         correctAnswer: "A"
     },
     {
-        question: "which tank is the Russian MBT today?",
+        question: "Which tank is the Russian MBT today?",
         answers: {
             A: "M1A2 Abrams",
             B: "T-90",
@@ -195,7 +195,7 @@ const Question3 = [
         correctAnswer: "B"
     },
     {
-        question: "sloping the tank armor is more effective because?",
+        question: "Sloping the tank armor is more effective because?",
         answers: {
             A: "it increases the tank armor effectiveness",
             B: "the bullet can go bbrrr",
